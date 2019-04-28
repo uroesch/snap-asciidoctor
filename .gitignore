@@ -1,0 +1,6 @@
+Gemfile.lock
+prime
+parts
+stage
+*.snap
+**.pyc

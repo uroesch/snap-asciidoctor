@@ -1,0 +1,38 @@
+name: asciidoctor
+version: "2.0.8"
+summary: Asciidoctor is a fast, open source text processor. 
+description: |
+  Asciidoctor is a fast, open source text processor 
+  and publishing toolchain for converting AsciiDoc 
+  content to HTML5, DocBook, PDF, and other formats. 
+  Asciidoctor is written in Ruby and runs on all major 
+  operation systems. 
+
+icon: snap/asciidoctor-icon.png
+grade: devel
+confinement: devmode
+base: core18
+
+parts:
+  asciidoctor:
+    source: .
+    plugin: my-ruby
+    ruby-version: 2.6.3
+    use-bundler: true
+apps:
+  asciidoctor:
+    command: |
+      bin/asciidoctor 
+        -r asciidoctor-rouge 
+        -r asciidoctor-pdf
+        -r asciidoctor-revealjs
+  pdf: 
+    command: |
+      bin/asciidoctor-pdf 
+        -r asciidoctor-rouge
+  revealjs:
+    command: |
+      bin/asciidoctor-revealjs
+        -r asciidoctor-rouge
+  reverse:
+    command: bin/reverse_asciidoctor

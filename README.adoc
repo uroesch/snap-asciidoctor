@@ -1,0 +1,70 @@
+= {Title}
+:title:     Asciidoctor Snap
+:author:    Urs Roesch
+:firstname: Urs
+:lastname:  Roesch
+:email:     github@bun.ch
+:revnumber: 0.1.0
+:keywords:  snap, snapcraft, ruby, asciidoctor, asciidoc
+:toc:       left
+:icons:     font
+
+
+This is a first attempt wrapping a snap for https://asciidoctor.org[Asciidoctor].
+I extensively use it for most of my writing needs so I thought I wrapp it up with
+some extensions and plugins.
+
+NOTE: The snap is in alpha state and may not work as intended. As such it is
+  provided as is!.
+
+[[build]]
+== Build
+[source,bash]
+----
+git clone https://github.com/uroesch/snap-asciidoctor.git
+cd snap-asciidoctor
+snapcraft
+----
+
+NOTE: I have built this with my a customized Docker container. I have not tested it
+ on any other platform. Your mileage my vary.
+
+[[install]]
+== Installation
+[source,bash]
+----
+sudo snap install --devmode --dangerous asciidoctor_*.snap
+----
+
+[[usage]]
+== Usage
+[source,bash]
+.Basic usage
+----
+asciidoctor README.adoc
+----
+This will compile the file `README.adoc` to `README.html`.
+
+NOTE: The syntax highlighter `rouge` is loaded by default.
+
+[source,bash]
+.Convert to pdf
+----
+asciidoctor.pdf README.adoc
+----
+
+[source,bash]
+.Convert to reveal.js
+----
+asciidoctor.revealjs README.adoc
+----
+
+[source,bash]
+.Convert html to Asciidoctor
+----
+asciidoctor.reverse README.html > README.adoc
+----
+
+[[todo]]
+== Todo
+* Include and test more modules such as the various diagrams
