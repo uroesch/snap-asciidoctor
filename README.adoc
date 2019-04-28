@@ -15,7 +15,7 @@ I extensively use it for most of my writing needs so I thought I wrapp it up wit
 some extensions and plugins.
 
 NOTE: The snap is in alpha state and may not work as intended. As such it is
-  provided as is!.
+  provided as is!
 
 [[build]]
 == Build
@@ -26,7 +26,7 @@ cd snap-asciidoctor
 snapcraft
 ----
 
-NOTE: I have built this with my a customized Docker container. I have not tested it
+NOTE: I have built this with my https://github.com/uroesch/snapcraft-docker[customized Docker container]. I have not tested it
  on any other platform. Your mileage my vary.
 
 [[install]]
